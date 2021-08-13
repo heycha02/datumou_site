@@ -1,0 +1,347 @@
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  color: white;
+  background-color: black;
+  width: 1000px;
+  margin: 0 auto;
+}
+/* ここからヘッダー */
+
+.container {
+  background-color: black;
+  width: 1000px;
+  margin: 0 auto;
+}
+.header {
+  height: 170px;
+  margin: 0 auto;
+  position: fixed; /*ヘッダー固定*/
+  top: 0;
+  z-index: 10;
+  opacity: 0.9;
+}
+.header-form {
+  float: right;
+}
+.img-head img {
+  height: 60%;
+}
+
+#menu-btn-check {
+  display: none; /*ハンバーガーメニューの確認チェックボックス外し*/
+}
+.nav {
+  height: 50px;
+  list-style: none;
+  display: flex;
+  /* align-items:stretch ; */
+  padding: 0;
+}
+.nav li {
+  text-align: center;
+  font-size: 16px;
+  flex: auto;
+  /* margin: 10px 0; */
+  /* padding: 5px 0;  */
+  transition: all 0.4s;
+  border-left: 1px solid white;
+}
+.nav li:last-child {
+  border-right: 1px solid white;
+}
+.nav a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.nav li:hover {
+  background-color: rgba(105, 105, 105, 0.7);
+}
+
+.nav li + li {
+  border-right: 0; /*ヘッダーの区切り線*/
+  border-left: 1px solid white;
+}
+/* ここまでヘッダー */
+
+/* ここからメイン１ */
+.main-container {
+  position: relative; /* グランドオープンのロゴのポジション調整用 */
+}
+.img-back {
+  margin-top: 170px; /*ヘッダー固定分の余白作り*/
+  width: 100%;
+}
+.img-g_open {
+  position: absolute;
+  top: 30%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.circle-box {
+  position: absolute;
+  top: 85%;
+  left: 40%;
+  display: flex;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  /* background-color:blue; */
+  margin: 0 20px;
+  /* position: relative; */
+}
+.circle p {
+  text-align: center;
+  padding: 12px 0;
+  /* position:absolute ; */
+}
+/* ここまでメイン１ */
+
+/* ここからメッセージ */
+.message {
+  height: 300px;
+  padding: 30px 200px;
+  font-size: 20px;
+  text-align: center;
+  font-family: serif;
+}
+/* ここまでメッセージ */
+
+/* ここからメイン２ */
+.main2 {
+  height: 530px;
+  text-align: center;
+  background-color: #800000;
+  padding: 10px;
+}
+.main2 h1 {
+  font-size: 30px;
+}
+.main2 ul {
+  list-style: none;
+  display: flex;
+  margin-right: 20px;
+}
+.main2-message li {
+  flex: auto;
+  font-size: 24px;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin: 0 20px;
+}
+.main2 h2 {
+  font-size: 48px;
+}
+.campaign-container {
+  display: flex;
+}
+.campaign {
+  font-size: 20px;
+  font-family: monospace;
+  flex: auto;
+  border: 1px solid white;
+  border-radius: 20px;
+  background-color: #fff;
+  color: black;
+  margin: 0 20px;
+}
+.campaign p {
+  font-size: 40px;
+  color: #800000;
+}
+.campaign span {
+  font-size: 20px;
+  color: #000;
+}
+/* ここまでメイン２ */
+/* ここからメイン３ */
+.main3 {
+  position: relative;
+  height: 200px;
+}
+.form {
+  /* box-shadow: 5px 5px 0px 0 rgb(255, 255, 255); */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* background-color: #d2b48c; */
+  background: radial-gradient(#d2b48c, black); /*グラデーション背景*/
+  color: black;
+  transition: all 0.7s;
+  border: 2px solid wheat;
+  border-radius: 50px;
+}
+.form:hover {
+  /* transition:0.7s; */
+  color: white;
+}
+.form a {
+  font-size: 30px;
+  padding: 10px;
+  line-height: 65px;
+  display: block;
+}
+/* ここまでメイン３ */
+/* ここからフッター */
+.footer {
+  height: 300px;
+  display: flex;
+  padding: 30px;
+  background-color: #2ee255;
+  /* overflow: hidden; */
+}
+.footer-container {
+  /* height: 200px; */
+}
+.img-foot {
+  height: 20%;
+}
+.footer ul {
+  flex: auto;
+  list-style: none;
+}
+.footer ul {
+  border-right: 0;
+  border-left: 1px solid white;
+}
+.footer ul:first-child {
+  border: none;
+}
+.footer-list li {
+  width: 70%;
+  padding-left: 10px;
+  margin: 15px 0;
+  margin-right: 10px;
+  border-bottom: 1px solid white;
+  border-radius: 5px;
+}
+.footer-list1 li {
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+.footer-list2 li {
+  margin: 20px 0;
+}
+/* ここなでフッター */
+
+/*メニュー料金のページ*/
+.menu-wrapper {
+  margin-top: 170px;
+  height: 33em;
+  /* margin-bottom: 10px; */
+}
+.menu-wrapper h1 {
+  font-size: 30px;
+  text-align: center;
+  padding: 5px 10px;
+  background-color: #d2b48c;
+}
+.menu-container {
+  display: flex;
+  padding: 10px 20px;
+  background-color: #dcdcdc;
+}
+.menu-parts {
+  text-align: center;
+  background-color: #fff;
+  padding: 10px 40px;
+  width: 40%;
+  color: black;
+}
+.menu-parts h2 {
+  font-size: 20px;
+  border-bottom: 1px solid black;
+}
+.menu-img {
+  height: 350px;
+  width: 100%;
+}
+.price-container {
+  color: black;
+  text-align: center;
+  background-color: #fff;
+  padding: 10px 40px;
+  margin-left: auto;
+  width: 40%;
+}
+.price-container h2 {
+  border-bottom: 1px solid black;
+}
+.price-container h3 {
+  font-size: 20px;
+  color: #800000;
+}
+.price-container p {
+  text-align: right;
+}
+.price-list {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.price-list ul {
+  padding: 0 10px;
+  text-align: left;
+  list-style: none;
+}
+.price-list li {
+  line-height: 1;
+  padding: 10px;
+}
+.price-amount li {
+  border-bottom: 1px solid black;
+}
+/* 回数コース案内 */
+.price_set-container {
+  /* height: 50em; */
+  padding: 10px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  background-color: #dcdcdc;
+}
+.price_set-container h2 {
+  color: #800000;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #800000;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+.price_set-container p {
+  color: gray;
+  text-align: right;
+}
+.price_table {
+  font-size: 13px;
+  text-align: center;
+  padding-left: 0;
+  /* height: 47em; */
+  color: black;
+  background-color: #fff;
+  /* border-style: none; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: (4, 100px);
+  list-style: none;
+}
+.price_table li {
+  padding: 10px 20px;
+  /* line-height: 2; */
+  border: 1px solid black;
+  border-style: dotted;
+}
+.row-odd {
+  color: white;
+  background-color: #800000;
+}
+.price_table span {
+  font-size: 30px;
+}

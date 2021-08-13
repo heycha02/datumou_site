@@ -1,0 +1,492 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: black;
+  width: 480px;
+  margin: 0 auto;
+}
+/* ヘッダー */
+
+.container {
+  background-color: black;
+  width: 480px;
+  margin: 0 auto;
+}
+.img-head {
+  display: block;
+  z-index: 99;
+  /* text-align:center ; */
+}
+.header {
+  height: 100px;
+  margin: 0 auto;
+  position: fixed; /*ヘッダー固定*/
+  z-index: 10;
+  opacity: 0.9;
+}
+.img-head {
+  height: 100%;
+}
+/*ハンバーガーはじめ*/
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color: black;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+.menu-btn span:before {
+  bottom: 8px;
+}
+.menu-btn span:after {
+  top: 8px;
+}
+/*ハンバーガー押すまで*/
+/*ハンバーガー押した！*/
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0
+  ); /*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+/*ハンバーガー押し終えた*/
+#menu-btn-check {
+  display: none; /*ハンバーガーメニューのチェックボックス確認外し*/
+}
+/*ハンバーガーの中身開く*/
+.menu-content {
+  margin-top: 100px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: black;
+}
+.menu-content ul {
+  padding: 0px 10px 0;
+}
+.menu-content ul li {
+  border-bottom: solid 1px #ffffff;
+  list-style: none;
+}
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 5px 0px 10px 0px;
+  position: relative;
+}
+.menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 2px #ffffff;
+  border-right: solid 2px #ffffff;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+/*ここまでハンバーガー開いてる状態*/
+/*ここからハンバーガー閉じる状態*/
+.menu-content {
+  width: 100%;
+  height: 53%;
+  position: fixed;
+  top: 0;
+  left: 100%; /*leftの値を変更してメニューを画面外へ*/
+  z-index: 10;
+  background-color: black;
+  transition: all 0.5s; /*アニメーション設定*/
+}
+/*ここまでハンバーガー閉じてる状態*/
+#menu-btn-check:checked ~ .menu-content {
+  left: 0; /*メニューを画面内へ*/
+}
+/*ハンバーガー開閉できる状態*/
+.nav {
+  height: 60px;
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+  /* align-items:stretch ; */
+  padding: 0;
+}
+.nav li {
+  text-align: center;
+  font-size: 16px;
+  /* flex:auto; */
+  /* margin: 10px 0; */
+  padding: 5px 0;
+  transition: all 0.4s;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  /* border-left: 1px solid white; */
+}
+.nav a {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.nav li:hover {
+  background-color: rgba(105, 105, 105, 0.7);
+}
+
+.nav li + li {
+  border-right: 1px solid white; ヘッダーの区切り線
+  /* border-left: 1px solid white; */
+}
+/* ここまでヘッダー */
+
+/* メイン１ */
+.main-container {
+  position: relative; /* グランドオープンのロゴのポジション調整用 */
+}
+.img-back {
+  margin-top: 60px; /*ヘッダー固定分の余白作り*/
+  width: 100%;
+  height:100%;
+}
+.img-g_open {
+  width:80%;
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.circle-box {
+  position: absolute;
+  top: 78%;
+  left: 0%;
+  /* display: flex; */
+}
+.circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid wheat;
+  /* background-color:blue; */
+  margin: 0px 20px;
+  /* position: relative; */
+}
+.circle p {
+  font-size: 10px;
+  text-align: center;
+  padding: 12px 0;
+  /* position:absolute ; */
+}
+/* ここまでメイン１ */
+
+/* メッセージ */
+.message {
+  height: 200px;
+  padding: 30px 20px;
+  font-size: 16px;
+  text-align: center;
+  font-family: serif;
+}
+.message p {
+  text-align:center ;
+}
+/* ここまでメッセージ */
+
+/* メイン２ */
+.main2 {
+  height: 370px;
+  text-align: center;
+  background-color: #800000;
+  padding: 10px;
+}
+.main2 h1 {
+  font-size: 30px;
+}
+.main2 ul {
+  width:100%;
+  list-style: none;
+  display: flex;
+  margin-right: 10px;
+  padding-left: 0;
+}
+.main2-message li {
+  flex: auto;
+  font-size: 16px;
+  border: 2px solid wheat;
+  border-radius: 20px;
+  margin: 0 20px;
+  padding:5px 0px;
+}
+.main2 h2 {
+  font-size: 26px;
+}
+.campaign-container {
+  display: flex;
+}
+.campaign {
+  width:100%;
+  font-size: 16px;
+  font-family: monospace;
+  flex: auto;
+  border: 3px solid wheat;
+  border-radius: 20px;
+  background-color: #fff;
+  color: black;
+  margin: 0 20px;
+}
+.campaign h3 {
+  margin: 5px;
+}
+
+.campaign p {
+  font-size: 20px;
+  color: #800000;
+  margin:0 5px;
+  padding:0 10px;
+}
+.campaign span {
+  font-size: 20px;
+  color: #000;
+}
+/* ここまでメイン２ */
+/* メイン３ */
+.main3 {
+  position: relative;
+  height: 200px;
+}
+.form {
+  /* box-shadow: 5px 5px 0px 0 rgb(255, 255, 255); */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* background-color: #d2b48c; */
+  background: radial-gradient(#d2b48c, black); /*グラデーション背景*/
+  color: black;
+  transition: all 0.7s;
+  border: 1px solid wheat;
+  border-radius: 50px;
+}
+.form:hover {
+  /* transition:0.7s; */
+  color: white;
+}
+.form a {
+  font-size: 16px;
+  padding: 5px 10px;
+  line-height: 26px;
+  display: block;
+  padding: 20px;
+
+}
+/* ここまでメイン３ */
+/* フッター */
+.footer {
+  height: auto;
+  text-align:center ;
+  display: flex;
+  flex-flow:column ;
+  padding: 10px 50px;
+  background-color: #d2b48c;
+  /* overflow: hidden; */
+}
+.footer-container {
+  /* height: 200px; */
+}
+.img-foot {
+  height: 20%;
+}
+.footer ul {
+  list-style: none;
+}
+.footer ul {
+  border-left: none;
+  border-right: 0;
+  border-bottom: 1px solid white;
+  padding:0 5px;
+}
+.footer ul:first-child {
+  border: none;
+}
+.footer-list {
+  margin-bottom: 0;
+  border-bottom: 2px solid white;
+}
+.footer-list li {
+  width: 90%;
+  text-align:center ;
+  padding-left: 0px;
+  padding:5px 0;
+  margin: 15px 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.footer-list1 li {
+  text-align: center;
+  padding: 0px 10px;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+.footer-list2 li {
+  margin: 20px 0;
+}
+/* ここなでフッター */
+/* ここからメニュー・料金ページ */
+.menu-wrapper {
+  margin-top: 100px;
+  height: 29em;
+  /* margin-bottom: 10px; */
+}
+.menu-wrapper h1 {
+  font-size: 30px;
+  text-align: center;
+  padding: 5px 10px;
+  background-color: #d2b48c;
+}
+.menu-container {
+  height: 22em;
+  display: flex;
+  padding: 10px ;
+  background-color: #dcdcdc;
+}
+.menu-parts {
+  text-align: center;
+  background-color: #fff;
+  padding: 10px 40px;
+  width: 40%;
+  color: black;
+}
+.menu-parts h2 {
+  font-size: 20px;
+  border-bottom: 1px solid black;
+}
+.menu-img {
+  height: auto;
+  width: 100%;
+}
+.price-container {
+  width: 30%;
+  color: black;
+  text-align: center;
+  font-weight:bold ;
+  background-color: #fff;
+  padding: 10px 20px;
+  margin:0 auto;
+}
+.price-container h2 {
+  border-bottom: 1px solid black;
+}
+.price-container h3 {
+  font-size: 10px;
+  color: #800000;
+}
+.price-container p {
+  font-size: 12px;
+  text-align: right;
+}
+.price-list {
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.price-list ul {
+  padding: 0 10px;
+  text-align: left;
+  list-style: none;
+}
+.price-list li {
+  line-height: 1;
+  padding: 5px;
+  margin-bottom:10px;
+}
+.price-item{
+  font-size: 10px;
+}
+.price-amount li {
+  font-size: 10px;
+  border-bottom: 1px solid black;
+}
+/* 回数コース案内 */
+.price_set-container {
+  /* height: 50em; */
+  /* padding: 10px; */
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: #dcdcdc;
+}
+.price_set-container h2 {
+  color: #800000;
+  text-align: center;
+  background-color: #fff;
+  border: 2px solid #800000;
+  border-radius:10px;
+  padding: 5px 0;
+  margin: 0 auto;
+}
+.price_set-container p {
+  color: gray;
+  text-align: right;
+}
+.price_table {
+  line-height: 1;
+  font-size: 7px;
+  font-weight:bold ;
+  text-align: center;
+  padding-left: 0;
+  /* height: 47em; */
+  color: black;
+  background-color: #fff;
+  /* border-style: none; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: (4, 100px);
+  list-style: none;
+}
+.price_table li {
+  padding: 10px 20px;
+  /* line-height: 2; */
+  border: 1px solid black;
+  border-style: dotted;
+}
+.row-odd {
+  color: white;
+  background-color: #800000;
+}
+.price_table span {
+  font-size: 20px;
+}
+.row-even {
+  justify-content: center;
+padding-top: 20px;
+}
